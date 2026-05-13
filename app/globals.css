@@ -1,0 +1,55 @@
+/* app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'DM Sans', system-ui, sans-serif;
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-stone-50 text-stone-900 min-h-screen;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer components {
+  /* Skeleton shimmer */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      theme('colors.stone.100') 25%,
+      theme('colors.stone.200') 50%,
+      theme('colors.stone.100') 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.4s infinite;
+  }
+
+  /* Custom scrollbar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.stone.300') transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar { width: 5px; height: 5px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: theme('colors.stone.300');
+    border-radius: 9999px;
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); }
+}

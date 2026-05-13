@@ -1,0 +1,17 @@
+# wrangler.toml — Cloudflare Pages configuration
+name = "reservas-app"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# Para Cloudflare Pages con Next.js
+pages_build_output_dir = ".vercel/output/static"
+
+[vars]
+NEXT_PUBLIC_APP_NAME = "ReservasPro"
+
+# Variables de entorno sensibles van en el Dashboard de Cloudflare
+# Settings > Environment Variables (no en este archivo)
+
+[[rules]]
+type = "ESModule"
+globs = ["**/*.mjs"]
