@@ -3,10 +3,7 @@ const nextConfig = {
   // Output standalone para Cloudflare Workers / self-hosted
   output: 'standalone',
 
-  // Experimental: compatibilidad con edge runtime de Cloudflare
-  experimental: {
-    serverComponentsExternalPackages: ['bcryptjs'],
-  },
+ serverExternalPackages: ['bcryptjs'],
 
   // Headers de seguridad
   async headers() {
